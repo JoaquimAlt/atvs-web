@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórias dos videogames</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Cabeçalho com Navbar -->
+    <header>
+        <h1>História dos 🎮</h1>
+
+        <!-- Botão de menu responsivo -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Navegação -->
+        <nav id="nav">
+            <a href="#introducao">Introdução</a>
+            <a href="#anos70">Anos 70</a>
+            <a href="#anos80">Anos 80</a>
+            <a href="#anos90">Anos 90</a>
+            <a href="#anos2000">Anos 2000</a>
+            <a href="#anos2010">Anos 2010</a>
+            <a href="#futuro">Futuro</a>
+            <a href="#legado">Legado</a>
+        </nav>
+
+        <!-- Botão que muda o tema -->
+        <button id="theme-button" class="dark-toggle" onclick="toggleTheme()">🌙</button>
+    </header>
+    <!-- Conteúdo principal -->
+    <main>
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <p>Os videogames surgiram como uma forma de entretenimento interativo e evoluíram para uma indústria
+                multibilionária...</p>
+        </section>
+
+        <section id="anos70">
+            <h2>Anos 1950–1970: Os Primeiros Passos</h2>
+            <ul>
+                <li><strong>1958:</strong> *Tennis for Two*</li>
+                <li><strong>1962:</strong> *Spacewar!*</li>
+                <li><strong>1972:</strong> Atari lança *Pong*</li>
+            </ul>
+            <blockquote>
+                Os primeiros experimentos com jogos eletrônicos aconteceram em universidades e laboratórios. Em 1958, o
+                físico William Higinbotham criou Tennis for Two em um osciloscópio, para entreter visitantes em um
+                laboratório de pesquisas nucleares nos EUA. Já em 1962, estudantes do MIT desenvolveram Spacewar!, um
+                jogo de combate entre naves espaciais — considerado um dos primeiros jogos digitais interativos.
+
+                Em 1972, a empresa Atari foi fundada por Nolan Bushnell e Ted Dabney. Seu jogo Pong, uma simulação
+                simples de tênis de mesa, foi o primeiro grande sucesso comercial dos arcades. O sucesso de Pong marcou
+                o nascimento da indústria de jogos eletrônicos como a conhecemos hoje.
+
+            </blockquote>
+        </section>
+
+        <section id="anos80">
+            <h2>Anos 1980: A Era de Ouro dos Arcades</h2>
+            <p>Jogos como Pac-Man, Donkey Kong, Space Invaders dominaram os fliperamas...</p>
+            <blockquote>
+                A Nintendo lançou o Game & Watch, precursor dos consoles portáteis, e logo em seguida o icônico NES
+                (Nintendo Entertainment System), que levou os videogames para as casas de milhões de pessoas. Super
+                Mario Bros (1985) definiu o gênero plataforma e estabeleceu padrões de jogabilidade, música e design de
+                níveis que ainda influenciam a indústria.
+            </blockquote>
+        </section>
+
+        <section id="anos90">
+            <h2>Anos 1990: Consoles e Rivalidades</h2>
+            <p>Sega vs Nintendo, surgimento do PlayStation e N64, jogos 3D...</p>
+            <blockquote>
+                Com gráficos melhores e som digital, a competição entre empresas se intensificou. A Sega lançou o Mega
+                Drive (ou Genesis, nos EUA), que rivalizou com o Super Nintendo (SNES). Essa rivalidade ficou conhecida
+                como “Console War”, marcada por propagandas agressivas e uma divisão cultural entre os fãs de Mario e
+                Sonic.
+            </blockquote>
+        </section>
+
+        <section id="anos2000">
+            <h2>Anos 2000: A Era da Internet</h2>
+            <p>PS2, Xbox, multiplayer online, jogos de PC como *World of Warcraft*...</p>
+            <blockquote>
+                A virada do milênio trouxe gráficos realistas, som surround e armazenamento em DVD. O PlayStation 2 da
+                Sony se tornou o console mais vendido da história, com mais de 155 milhões de unidades. A Microsoft
+                entrou no mercado com o Xbox, destacando-se por seu poder de processamento e o serviço online Xbox Live.
+            </blockquote>
+        </section>
+
+        <section id="anos2010">
+            <h2>Anos 2010: Indies e Streaming</h2>
+            <p>Jogos como Minecraft, Fortnite, revolução das lojas digitais e jogos como serviço...</p>
+            <blockquote>
+                A distribuição digital substituiu os CDs e DVDs. Plataformas como Steam, PlayStation Store, Xbox Live e
+                App Store permitiram que desenvolvedores independentes criassem e distribuíssem jogos inovadores, como
+                Minecraft, Stardew Valley, Celeste e Undertale.
+            </blockquote>
+        </section>
+
+        <section id="futuro">
+            <h2>Anos 2020+: Nuvem e Realidade Virtual</h2>
+            <p>Crescimento dos jogos em nuvem, VR, e o uso de IA em jogos...</p>
+            <blockquote>
+                A década de 2020 começou com o crescimento dos serviços de jogos em nuvem, como Xbox Cloud Gaming,
+                NVIDIA GeForce Now e Amazon Luna. Eles prometem jogar títulos pesados em qualquer dispositivo com
+                conexão estável, sem a necessidade de consoles potentes.
+            </blockquote>
+        </section>
+
+        <section id="legado">
+            <h2>Legado Cultural</h2>
+            <p>Hoje, os videogames são mais do que entretenimento: são uma forma de arte reconhecida por museus,
+                festivais e universidades. Eventos como a EVO (foco em jogos de luta), a Gamescom e o The Game Awards
+                demonstram sua relevância global.</p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Jokas produções</p>
+    </footer>
+
+    <script>
+        // Alterna o modo claro/escuro
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            
+            const btn = document.getElementById('theme-button');
+            btn.textContent = isDark ? "🌙" : "☀️";
+        }
+
+
+        // Alterna o menu em telas pequenas
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('show');
+        }
+  </script>
+</body>
+
+</html>

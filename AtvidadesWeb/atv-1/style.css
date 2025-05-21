@@ -1,0 +1,72 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url(https://media.istockphoto.com/id/1454308121/pt/foto/grunge-3d-illustration-of-scotland-flag.jpg?s=612x612&w=0&k=20&c=NDFk0QheLNnvfalY_QgdYhjWm6uQkb2B2pR5R7cl3gc=);
+    background-size: cover;     
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+#box {
+    margin: 10px;
+    margin-inline: auto;
+    width: 75%;
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+}
+
+table, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#intro  {
+    padding: 10px;
+    margin-bottom: 1px solid black;
+    text-align: center;
+    color: white;
+}
+
+#intro p {
+    font-size: 16px;
+}
+
+#story {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#story img {
+    height: 280px;
+}
+
+.info  {
+    padding: 20px;
+    margin-bottom: 1px solid black;
+}
+
+.info p {
+    font-size: 16px;
+}
+
+.placar {
+    margin-block: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.escudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.escudo a {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-block: 10px 5px;
+}
