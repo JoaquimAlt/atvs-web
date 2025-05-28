@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 04</title>
+    <style>
+
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        p {
+            color: gray;
+        }
+
+        .notification-card {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+
+            width: 250px;
+            right: 20px;
+            bottom: 20px;
+
+            padding: 12px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .close-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .card-content h3, .card-content p{
+            margin-block: 10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Bem vindo á um site genério</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+
+        <h1>Bla bla bla</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, aliquam alias dolores aut in voluptatem
+            velit, tempore laudantium enim nulla ex sequi, vitae excepturi culpa et! Possimus culpa temporibus repellat.
+        </p>
+    </div>
+
+
+    <div id="card" class="notification-card">
+        <div class="card-header">
+            <button onclick="closeCard()" class="close-btn">X</button>
+        </div>
+        <div class="card-content">
+            <h3>Novidade!</h3>
+            <p>Confira nossos novos produtos.</p>
+        </div>
+    </div>
+
+    <script>
+        function closeCard() {
+            document.getElementById("card").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

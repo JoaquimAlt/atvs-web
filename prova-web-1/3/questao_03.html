@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 03</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e);
+            background-size: 100% 100%;
+        }
+
+        .pokemon {
+            width: 300px;
+            height: 400px;
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 40px;
+            border-radius: 20px;
+            background-color: brown;
+        }
+
+        .background-pokemon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 280px;
+            height: 280px;
+
+            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/01c1cad6-a54c-430a-a91c-d330b68403df/da5ucbm-78018326-2f14-452d-a8f3-4bc7fc0acb37.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxYzFjYWQ2LWE1NGMtNDMwYS1hOTFjLWQzMzBiNjg0MDNkZlwvZGE1dWNibS03ODAxODMyNi0yZjE0LTQ1MmQtYThmMy00YmM3ZmMwYWNiMzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gZQb5m-qKUQYPDJEkDa9HG2Yeh-xnuYMsTCArk7J6X4);
+            background-size: 100% 100%;
+        }
+
+        #pokemon-image {
+            width: 60%;
+            height: 60%;
+        }
+
+        .pokedex-buttons {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            text-align: center;
+            border: 1px solid gray;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: rgb(66, 66, 66);
+            color: white;
+        }
+
+        .pokedex-buttons button {
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pokemon">
+        <div class="background-pokemon">
+            <img id="pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
+        </div>
+
+        <div class="pokedex-buttons">
+            <button onclick="diminuirNum()"><h2> Voltar -1 </h2></button>
+            <h1 id="pokemon-number">1</h1>
+            <button onclick="aumentarNum()"><h2> Adiantar +1 </h2></button>
+        </div>
+    </div>
+
+    <script>
+        let pokemon_number = document.getElementById("pokemon-number");
+
+        let pokemon_image = document.getElementById("pokemon-image");
+
+        let isDisable = false;
+
+        function aumentarNum() {
+            let num = parseInt(pokemon_number.innerText);
+            if(num > 0 && num < 100) {
+                pokemon_number.innerText = parseInt(pokemon_number.innerText) + 1;
+                atualizarPokemon();
+            }
+        }
+
+        function diminuirNum() {
+            let num = parseInt(pokemon_number.innerText);
+            if(num > 1 && num <= 100) {
+                pokemon_number.innerText = parseInt(pokemon_number.innerText) - 1;
+                atualizarPokemon();
+            }
+        }
+
+        function atualizarPokemon(){
+            pokemon = pokemon_number.innerText;
+            pokemon_image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon}.svg`;
+        }
+    </script>
+
+</body>
+</html>
