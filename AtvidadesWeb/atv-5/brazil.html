@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .acima-media {
+            background-color: #ffe0e0;
+        }
+
+        .destaque {
+            font-weight: bold;
+            color: rgb(128, 0, 0);
+        }
+
+        .maior, .menor {
+            color: white;
+            font-weight: bold;
+        }
+
+        .maior {
+            background-color: brown;
+        }
+
+        .menor {
+            background-color: rgb(20, 88, 60);
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>COVID-19 - Estados do Brasil</h1>
+    <table id="tabela-estados">
+        <thead>
+            <tr>
+                <th>Nome do Estado</th>
+                <th>UF</th>
+                <th>Casos</th>
+                <th>Suspeitos</th>
+                <th>Mortes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td><strong>Média</strong></td>
+                <td>-</td>
+                <th id="media-casos"></th>
+                <th id="media-suspeitos"></th>
+                <th id="media-mortes"></th>
+            </tr>
+            <tr>
+                <td colspan="5" id="maior-relacao" class="maior"></td>
+            </tr>
+            <tr>
+                <td colspan="5" id="menor-relacao" class="menor"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        async function consumirApiCovid() {
+            const apiUrl = "https://covid19-brazil-api.now.sh/api/report/v1";
+            const res = await fetch(apiUrl);
+            const data = await res.json();
+            const estados = data.data;
+
+            const tbody = document.querySelector("#tabela-estados tbody");
+
+            let totalCasos = 0; let totalSuspeitos = 0; let totalMortes = 0;
+            let maiorRelacao = 0; let menorRelacao = Infinity;
+            let estadoMaiorRelacao = ''; let estadoMenorRelacao = '';
+
+            estados.forEach(estado => {
+                totalCasos += estado.cases;
+                totalSuspeitos += estado.suspects;
+                totalMortes += estado.deaths;
+
+                const relacao = estado.deaths === 0 ? 0 : estado.cases / estado.deaths;
+
+                if (relacao > maiorRelacao) {
+                    maiorRelacao = relacao;
+                    estadoMaiorRelacao = estado.state;
+                } 
+                if (relacao < menorRelacao && estado.deaths > 0) {
+                    menorRelacao = relacao;
+                    estadoMenorRelacao = estado.state;
+                }
+            });
+
+            const mediaCasos = (totalCasos / estados.length).toFixed(0);
+            const mediaSuspeitos = (totalSuspeitos / estados.length).toFixed(0);
+            const mediaMortes = (totalMortes / estados.length).toFixed(0);
+
+            document.getElementById("media-casos").innerHTML = mediaCasos;
+            document.getElementById("media-suspeitos").innerHTML = mediaSuspeitos;
+            document.getElementById("media-mortes").innerHTML = mediaMortes;
+
+
+            estados.forEach(estado => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+            <td>${estado.state}</td>
+            <td>${estado.uf}</td>
+            <td>${estado.cases}</td>
+            <td>${estado.suspects}</td>
+            <td>${estado.deaths}</td>
+            `;
+
+                if (estado.deaths > mediaMortes) {
+                    tr.classList.add("destaque");
+                }
+
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById("maior-relacao").innerHTML = "↑ Taxa de Morte por Caso: " + estadoMaiorRelacao;
+            document.getElementById("menor-relacao").innerHTML = "↓ Taxa de Morte por Caso: " + estadoMenorRelacao;
+        };
+
+        consumirApiCovid();
+
+
+    </script>
+</body>
+
+</html>
